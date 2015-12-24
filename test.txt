@@ -1,0 +1,1 @@
+{"state":{"desired":{"red":111,"green":222,"blue":888},"delta":{"red":111,"green":222,"blue":888}},"metadata":{"desired":{"red":{"timestamp":1450976527},"green":{"timestamp":1450976527},"blue":{"timestamp":1450976527}}},"version":5,"timestamp":1450979144}

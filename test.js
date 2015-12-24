@@ -35,7 +35,7 @@ var thingShadows = awsIot.thingShadow({
 //
 // Thing shadow state
 //
-var rgbLedLampState = {"state":{"desired":{"red":187,"green":114,"blue":222}}};
+var rgbLedLampState = {"state":{"desired":{"red":222,"green":333,"blue":555}}};
 
 //
 // Client token value returned from thingShadows.update() operation
@@ -45,12 +45,12 @@ var clientTokenUpdate;
 thingShadows.on('connect', function() {
 //
 // After connecting to the AWS IoT platform, register interest in the
-// Thing Shadow named 'RGBLedLamp'.
+// Thing Shadow named 'myNode'.
 //
-    thingShadows.register( 'RGBLedLamp' );
+    thingShadows.register( 'myNode' );
 //
 // 2 seconds after registering, update the Thing Shadow named 
-// 'RGBLedLamp' with the latest device state and save the clientToken
+// 'myNode' with the latest device state and save the clientToken
 // so that we can correlate it with status or timeout events.
 //
 // Note that the delay is not required for subsequent updates; only
@@ -59,7 +59,7 @@ thingShadows.on('connect', function() {
 // method for more details.
 //
     setTimeout( function() {
-       clientTokenUpdate = thingShadows.update('RGBLedLamp', rgbLedLampState  );
+       clientTokenUpdate = thingShadows.update('myNode', rgbLedLampState  );
        }, 2000 );
     });
 
