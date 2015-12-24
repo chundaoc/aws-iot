@@ -4,7 +4,7 @@ var device = awsIot.device({
   	"host": "A9G4M9UKUT88L.iot.us-west-2.amazonaws.com",
 	"port": 8883,
 	"clientId": "myTest",
-	"thingName": "myNode",
+	"thingName": "myTest",
 	"caCert": "../.ssh/aws-root-CA.pem",
 	"clientCert": "../.ssh/f9a46c2a28-certificate.pem.crt",
 	"privateKey": "../.ssh/f9a46c2a28-private.pem.key",
@@ -45,12 +45,12 @@ var clientTokenUpdate;
 thingShadows.on('connect', function() {
 //
 // After connecting to the AWS IoT platform, register interest in the
-// Thing Shadow named 'myNode'.
+// Thing Shadow named 'myTest'.
 //
-    thingShadows.register( 'myNode' );
+    thingShadows.register( 'myTest' );
 //
 // 2 seconds after registering, update the Thing Shadow named 
-// 'myNode' with the latest device state and save the clientToken
+// 'myTest' with the latest device state and save the clientToken
 // so that we can correlate it with status or timeout events.
 //
 // Note that the delay is not required for subsequent updates; only
@@ -59,7 +59,7 @@ thingShadows.on('connect', function() {
 // method for more details.
 //
     setTimeout( function() {
-       clientTokenUpdate = thingShadows.update('myNode', rgbLedLampState  );
+       clientTokenUpdate = thingShadows.update('myTest', rgbLedLampState  );
        }, 2000 );
     });
 
